@@ -22,6 +22,4 @@ jobs:
           distribution: 'zulu'
           java-version: 17
       - name: Run dowel-processor tests
-        run: ./gradlew dowel-processor:test
-      - name: Run dowel-lint tests
-        run: ./gradlew dowel-lint:test
+        run: ./gradlew test

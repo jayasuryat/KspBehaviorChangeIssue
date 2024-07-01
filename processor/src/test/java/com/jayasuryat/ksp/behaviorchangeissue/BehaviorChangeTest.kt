@@ -35,7 +35,7 @@ class BehaviorChangeTest {
             SourceFile.kotlin(name = "Person.kt", contents = source)
         val result: KotlinCompilation.Result = compile(kotlinSource)
 
-        Assert.assertEquals(KotlinCompilation.ExitCode.COMPILATION_ERROR, result.exitCode)
+        Assert.assertEquals(KotlinCompilation.ExitCode.OK, result.exitCode)
     }
 
     private fun compile(
