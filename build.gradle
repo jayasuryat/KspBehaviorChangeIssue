@@ -2,9 +2,9 @@
 
 buildscript {
     ext {
-        kotlin_version = "1.7.0"
-        ksp_api_version = "1.7.0-1.0.6"
-        compile_testing_version = "1.4.9"
+        kotlin_version = "1.9.24"
+        ksp_api_version = "1.9.24-1.0.20"
+        compile_testing_version = "1.6.0"
     }
 }
 
