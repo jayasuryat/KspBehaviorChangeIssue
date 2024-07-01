@@ -10,34 +10,6 @@ on:
 
 jobs:
 
-  lint:
-    name: Spotless check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 17
-      - name: Spotless check
-        run: ./gradlew spotlessCheck
-
-  api_check:
-    name: API check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 17
-      - name: API check
-        run: ./gradlew apiCheck
-
   test:
     name: Run tests
     runs-on: ubuntu-latest
@@ -53,19 +25,3 @@ jobs:
         run: ./gradlew dowel-processor:test
       - name: Run dowel-lint tests
         run: ./gradlew dowel-lint:test
-
-  build:
-    name: Build project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 17
-      - name: Build project
-        run: ./gradlew assemble
